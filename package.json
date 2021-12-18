@@ -13,5 +13,8 @@
     "@vueuse/shared": "^6.8.0",
     "vue": "^3.2.21"
   },
-  "name": "problem-solving-patterns"
+  "name": "problem-solving-patterns",
+  "devDependencies": {
+    "@iconify-json/uim": "^1.0.2"
+  }
 }
