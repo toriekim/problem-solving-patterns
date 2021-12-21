@@ -80,14 +80,15 @@ _Uses objects or sets to collect values/frequencies of values_
 [^1]: Read more: [MDN Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 ---
-layout: image-right
-image: 'https://images.unsplash.com/photo-1515347272087-685ce5a1fc8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80'
----
 
 # Frequency Counter
-<br />
 
 ## Example #1: `same`
+<br />
+
+<div grid="~ cols-2 gap-3" m="-t-2">
+
+<div>
 
 Write a function `same`, which accepts two arrays. The function should return **true** if every value in the array has its corresponding value squared in the second array. The frequency of values must be the same.
 
@@ -97,22 +98,13 @@ same([1,2,3], [4,1,9]) // true
 same([1,2,3], [1,9]) // false
 same([1,2,1], [4,4,1]) // false (must be same frequency)
 ```
-
----
-layout: default
----
-<div grid="~ cols-2 gap-3" m="-t-2">
+</div>
 
 <div>
 
-# Frequency Counter
-<br />
-
-#### Example #1: `same`
-
 ### Naive Solution:
 
-```js{all|7}
+```js{all|7|all}
 const same = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
@@ -131,18 +123,9 @@ const same = (arr1, arr2) => {
 }
 ```
 
-</div>
-
-<div class="abs-br m-10 flex gap-5">
-<i><p v-click style="text-align: right">What is the time complexity to this?</p></i>
-
-<div v-click style="text-align: right">
-
-$O(n^2)$
+<p v-click style="text-align: right">Time complexity: O(n^2)</p>
 
 </div>
-</div>
-
 </div>
 
 ---
@@ -591,7 +574,7 @@ const findLongestSubstring = (str) => {
 
 ---
 layout: image-right
-image: 'https://images.unsplash.com/photo-1546376237-f3c0d7c47118?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=858&q=80'
+image: 'https://images.unsplash.com/photo-1601294079875-dbd9497d80b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
 ---
 
 # Divide & Conquer
@@ -604,7 +587,7 @@ _Involves **dividing** a data set into **smaller chucks** & then **repeating** a
 
 ---
 layout: image-right
-image: 'https://images.unsplash.com/photo-1496092607007-ca127e0b6a10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80'
+image: 'https://images.unsplash.com/photo-1601294079875-dbd9497d80b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
 ---
 
 # Divide & Conquer
