@@ -17,7 +17,7 @@ image: https://images.unsplash.com/photo-1544237529-10b958ec0461?ixlib=rb-1.2.1&
 
 <div class="absolute bottom-10">
   <h1>Problem Solving Patterns</h1>
-  <p>An introduction to common patterns</p>
+  <p>An introduction to common algo patterns</p>
 </div>
 
 ---
