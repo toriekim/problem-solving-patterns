@@ -16,8 +16,8 @@ image: https://images.unsplash.com/photo-1544237529-10b958ec0461?ixlib=rb-1.2.1&
 </div>
 
 <div class="absolute bottom-10">
-  <h1>Common Problem Solving Patterns</h1>
-  <p>An introduction to REACTOs & solving algos</p>
+  <h1>Problem Solving Patterns</h1>
+  <p>An introduction to common patterns</p>
 </div>
 
 ---
@@ -25,11 +25,10 @@ image: https://images.unsplash.com/photo-1544237529-10b958ec0461?ixlib=rb-1.2.1&
 # Goals
 
 <ul class=list>
-  <li>To understand what REACTO stands for problem-solving approach</li>
-  <li>To learn some common problem-solving patterns w/ examples</li>
+  <li>To understand REACTO as a problem-solving approach</li>
+  <li>To learn common problem-solving patterns w/ examples</li>
   <ul id="sublist">
-    <li>Frequency Counter
-</li>
+    <li>Frequency Counter</li>
     <li>Pointers</li>
     <li>Sliding Window</li>
     <li>Divide & Conquer</li>
@@ -71,13 +70,27 @@ _Uses objects or sets to collect values/frequencies of values_
 
 * This can often avoid the need for nested loops or O(n^2) operations with arrays & strings
 
-* Breakdown the array/string into a frequency -- can use Map[^1]
+* Breakdown the array/string into a frequency object -- can use Map[^1]
 
 * Multiple separate loops are infinitely better than nested loops
 
 * Examples: `same`, `validAnagram`, `areThereDuplicates`
 
 [^1]: Read more: [MDN Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+---
+
+## General approach using _frequency counter_
+
+* Set up 1 or 2 frequency counters -- empty objects or Map **
+* Loop through each input & populate frequency counter
+* Loop through **Counter 1** & compare values to those in **Counter 2**
+* **OR** if using only 1 counter, deduct from counter while looping through second input
+
+<br />
+<hr />
+
+** _The object we are storing our key/value pairs is called a hash map/table. It has O(1) look-up. They can increase in complexity as key/value pairs can be comprised of all data types and other data structures._
 
 ---
 
@@ -128,9 +141,6 @@ const same = (arr1, arr2) => {
 </div>
 </div>
 
----
-layout: intro-image
-image: 'https://images.unsplash.com/photo-1592150621744-aca64f48394a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1791&q=80'
 ---
 
 ## Frequency Counter
@@ -199,7 +209,7 @@ The refactored with Map is O(3n) -> O(n)
 
 ---
 layout: image-right
-image: 'https://images.unsplash.com/photo-1515347272087-685ce5a1fc8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80'
+image: ''
 ---
 
 # Frequency Counter
@@ -217,8 +227,6 @@ validAnagram('anagram', 'nagaram') // true
 validAnagram('rat', 'car') // false
 ```
 
----
-layout: default
 ---
 
 # Frequency Counter
@@ -286,6 +294,30 @@ const validAnagram = (str1, str2) => {
 </div>
 
 ---
+
+## Some ways to identify the problem might require _frequency counter_:
+
+* The problem is comparing two arrays or strings
+
+* You have to keep track of the frequency of elements in the inputs -- letters in a string, elements in an array, digits in a number, etc.
+
+* You have to compare these elements in some way
+
+## Common problems you use _frequency counter_ with:
+
+* Checking same frequency of digits, letters, elements, etc.
+
+* Checking for duplicates
+
+* Comparing 2 inputs -- strings: anagram, arrays: corresponding values
+
+<style>
+h2 {
+  color: #bdedff
+}
+</style>
+
+---
 layout: image-right
 image: 'https://images.unsplash.com/photo-1550345283-f456c85af8d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
 ---
@@ -298,13 +330,32 @@ _Creating **pointers** or values that correspond to an **index** or **position**
 
 * **Very** efficient for solving problems with minimal space complexity as well
 
+* Prevents nested loops or O(n^2) operations with **sorted** arrays
+
 * Different types: 2 pointers, multiple pointers, fast & slow pointers (linked lists)
 
 * Examples: `sumZero`, `twoSum`, `countUniqueValues`, & `isSubsequence`
 
 ---
+
+## General approach using _pointers_
+
+* Set up 2 or more pointers (variables representing index/position) **
+* Usually left/right or start/end positions -- 0 & array.length - 1
+  * Can also be a "slow" pointer & a "fast" pointer -- base/scout
+
+* Loop through input while left is **less than** right
+* If goal/condition is met, return
+* If not, increment or decrement pointers to update position
+
+<br />
+<hr />
+
+** Most problems require either 2 or 3 pointers. Any more and you may have to rethink your approach.
+
+---
 layout: image-right
-image: 'https://images.unsplash.com/photo-1550345283-f456c85af8d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+image: ''
 ---
 # Pointers
 <br />
@@ -424,6 +475,30 @@ function countUniqueValues(arr) {
 </div>
 
 ---
+
+## Some ways to identify the problem might require _pointers_:
+
+* Dealing with sorted arrays (or linked lists) & need to find a set of elements that fulfill certain constraints
+
+* The set of elements in the array is a pair, a triplet, or even a subarray
+
+## Common problems you use _pointers_ with:
+
+* Squaring a sorted array
+
+* Pair or triplets that sum up to target value
+
+* Comparing strings that contain backspaces
+
+* Remove duplicates from sorted array in-place
+
+<style>
+h2 {
+  color: #bdedff
+}
+</style>
+
+---
 layout: image-right
 image: 'https://images.unsplash.com/photo-1496092607007-ca127e0b6a10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80'
 ---
@@ -441,8 +516,27 @@ _This pattern involves creating a **window** which can either be an **array** or
 * Examples: `maxSubarraySum`, `minSubArrayLen`, & `findLongestSubstring`
 
 ---
+
+## General approach using _sliding window_
+
+* Not as intuitive as the other problem-solving patterns **
+
+* Set up variables to compare data values -- the condition the problem is asking for
+
+  * Usually a minimum or maximum value of some kind
+
+* Loop through input and compare values
+
+* Update values and adjust the window accordingly
+
+<br />
+<hr />
+
+** Useful to break down more complex problems
+
+---
 layout: image-right
-image: 'https://images.unsplash.com/photo-1496092607007-ca127e0b6a10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80'
+image: ''
 ---
 
 # Sliding Window
@@ -498,22 +592,22 @@ const maxSubarraySum = (arr, num) => {
 ```
 <!-- Time Complexity O(n^2) & Space Complexity O(1) -->
 
-```js{all|all}
+```js{all|2-4|7-10|12-13|14-17|all}
 const maxSubarraySum = (arr, num) => {
-  // set up variables for "window"
+  // set up variables for comparing data values
   let maxSum = 0;
   let tempSum = 0;
 
   if (arr.length < num) return null;
-
+  // initiate the window
   for (let i = 0; i < num; i++) {
     maxSum += arr[i];
   }
-
   tempSum = maxSum;
-
+  // "slide" the window down the input array
   for (let i = num; i < arr.length; i++) {
     tempSum = tempSum - arr[i - num] + arr[i];
+    // update value with new window's value
     maxSum = Math.max(maxSum, tempSum);
   }
   return maxSum;
@@ -573,6 +667,28 @@ const findLongestSubstring = (str) => {
 </div>
 
 ---
+
+## Some ways to identify the problem might require _sliding window_:
+
+* Problem input is a linear data structure -- linked list, array, or string
+
+* You're asked to find the longest/shortest substring, subarray, or a desired value (min/max)
+
+## Common problems you use _sliding window_ with:
+
+* Maximum sum subarray of size 'k'
+
+* Longest substring with 'k' distinct characters
+
+* String anagrams
+
+<style>
+h2 {
+  color: #bdedff
+}
+</style>
+
+---
 layout: image-right
 image: 'https://images.unsplash.com/photo-1601294079875-dbd9497d80b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
 ---
@@ -582,6 +698,10 @@ image: 'https://images.unsplash.com/photo-1601294079875-dbd9497d80b1?ixlib=rb-1.
 _Involves **dividing** a data set into **smaller chucks** & then **repeating** a process with a subset of data_
 
 * This pattern can tremendously decrease time complexity
+
+* Commonly used pattern for more complex/complicated algorithms
+
+* Sorting or searching algorithms
 
 * Examples: `search`, binary search problems
 
@@ -629,7 +749,7 @@ const search = (arr, val) => {
 ```
 <!-- Time Complexity O(n^2) & Space Complexity O(1) -->
 
-```js{all|all}
+```js{all|5|7-16|all}
 const search = (arr, val) {
   let start = 0, end = arr.length - 1
 
@@ -653,4 +773,28 @@ const search = (arr, val) {
 
 </div>
 
+---
+
+# Resources
+
+* Colt Steele's Udemy course: [JavaScript Algorithms & Data Structures Masterclass](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/)
+
+* “[14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)” by Fahim ul Haq on Hacker Noon
+
+* “[Top Algorithms/Data Structures/Concepts every computer science student should know](https://medium.com/techie-delight/top-algorithms-data-structures-concepts-every-computer-science-student-should-know-e0549c67b4ac)” by Coding Freak on Medium
+
+---
+layout: intro-image
+image: 'https://images.unsplash.com/photo-1544237529-10b958ec0461?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80'
+---
+
+<div class="absolute top-10">
+  <span class="font-700">
+    Torie Kim | 2111 FSA/GH Async Week
+  </span>
+</div>
+
+<div class="absolute bottom-10">
+  <h1>Thanks for coming!</h1>
+</div>
 
