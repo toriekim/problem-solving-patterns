@@ -756,16 +756,16 @@ const search = (arr, val) {
   while (start <= end) {
     let mid = Math.floor((start + end) / 2) // mid idx
 
-    if (arr[middle] < val) {
+    if (arr[mid] < val) {
       // move start to middle
-      start = middle + 1;
+      start = mid + 1;
     }
-    else if (arr[middle] > val) {
+    else if (arr[mid] > val) {
       // move end to position before mid
-      end = middle - 1;
+      end = mid - 1;
     }
     // middle element is equal to target
-    else return middle;
+    else return mid;
   }
   return -1;
 }
